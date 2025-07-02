@@ -58,6 +58,7 @@ Todos os testes estão organizados em arquivos separados por contexto, com coman
 │   │   ├── comportamentos-dinamicos.cy.ts
 │   │   ├── frames-alerts.cy.ts
 │   │   ├── interacoes.cy.ts
+│   │   ├── acessibilidade.cy.ts
 │   │   └── forms/
 │   │       ├── form-completo.cy.ts
 │   │       └── form-validacoes.cy.ts
@@ -74,12 +75,17 @@ Todos os testes estão organizados em arquivos separados por contexto, com coman
 │       │   ├── interacoes.ts   # Cliques, tooltips, radios e checkbox
 │       │   ├── modal.ts        # Validação do modal de envio
 │       │   ├── navegacao.ts    # Navegação padronizada com rotas
+│       │   ├── acessibilidade.ts # Validações de WCAG com cypress-axe
 │       │   └── validacoes.ts   # Campos obrigatórios e formatos inválidos
 │       ├── e2e.ts              # Importa todos os comandos
 │       └── index.d.ts          # Tipagens dos comandos customizados
 ├── package.json                # Configurações do projeto e scripts
 ├── package-lock.json
 ├── cypress/tsconfig.json       # Configurações do TypeScript
+├── cypress.env.json            # Variáveis de ambiente da suíte
+├── .github/
+│   └── workflows/
+│       └── cypress.yml         # Pipeline de testes no GitHub Actions
 ├── eslint.config.js            # Regras do ESLint
 ├── .prettierrc                 # Regras do Prettier
 └── .gitignore
