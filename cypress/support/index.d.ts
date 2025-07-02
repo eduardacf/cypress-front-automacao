@@ -85,5 +85,7 @@ declare namespace Cypress {
         validarCliques(): void;
 
         acessarPagina(pagina: string): void;
+
+        verificarAcessibilidadeComLogs(): void
     }
 }
