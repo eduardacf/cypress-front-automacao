@@ -21,7 +21,6 @@ A automação cobre interações complexas de UI com foco em clareza, reutiliza�
 - [Licença](#licença)
 - [Contato](#contato)
 
-
 ---
 
 ## 📖 Descrição
@@ -68,21 +67,22 @@ Todos os testes estão organizados em arquivos separados por contexto, com coman
 │   │   └── foto.jpg
 │   └── support/
 │       ├── commands/           # Comandos customizados do Cypress
-│       │   ├── demoqa.ts       # Cadastro, alertas e modais
-│       │   ├── dynamic.ts      # Progresso e botão dinâmico
-│       │   ├── estrutura.ts    # Alertas simples e iframes
-│       │   ├── form.ts         # Ações do formulário principal
-│       │   ├── interacoes.ts   # Cliques, tooltips, radios e checkbox
-│       │   ├── modal.ts        # Validação do modal de envio
-│       │   ├── navegacao.ts    # Navegação padronizada com rotas
-│       │   └── validacoes.ts   # Campos obrigatórios e formatos inválidos
+│       │   ├── demoqa.ts
+│       │   ├── dynamic.ts
+│       │   ├── estrutura.ts
+│       │   ├── form.ts
+│       │   ├── interacoes.ts
+│       │   ├── modal.ts
+│       │   ├── navegacao.ts
+│       │   └── validacoes.ts
 │       ├── e2e.ts              # Importa todos os comandos
-│       └── index.d.ts          # Tipagens das custom commands
-├── package.json                # Configurações do projeto e scripts
+│       └── index.d.ts          # Tipagens dos comandos customizados
+├── package.json
 ├── package-lock.json
-├── tsconfig.json               # Configurações do TypeScript
+├── tsconfig.json
 └── .eslintrc.json / .prettierrc
 ```
+
 ---
 
 ## 🧩 Comandos Personalizados
@@ -97,7 +97,7 @@ cy.validarFormatoInvalido('#inputEmail', 'email-invalido');
 ### 🖱️ Interações com elementos
 
 ```ts
-cy.validarCliques(); // Clique duplo e direito
+cy.validarCliques(); // Valida cliques duplo e com botão direito
 cy.validarTooltip('#toolTipButton', 'You hovered over the Button');
 cy.selecionarCheckbox('Downloads');
 cy.selecionarRadio('yesRadio', 'Yes');
@@ -145,16 +145,25 @@ cd seu-repositorio
 # 3. Instale as dependências
 npm install
 
-# 4. Abra a interface do Cypress:
+# 4. Abra a interface do Cypress
 npm run cy:open
 
-# 5. ou execute os testes em modo headless:
+# 5. Execute os testes em modo headless
 npm run cy:run
 
-# 6. Para verificar o estilo de código e formatar arquivos:
+# 6. Verifique o estilo de código e formate arquivos
 npm run lint
-npm run format 
+npm run format
 ```
+
+---
+
+## 📜 Scripts disponíveis
+
+- `npm run cy:open` – Abre a interface visual do Cypress
+- `npm run cy:run` – Executa os testes no modo headless
+- `npm run lint` – Verifica padrões de código com ESLint
+- `npm run format` – Formata o código com Prettier
 
 ---
 
@@ -163,7 +172,7 @@ npm run format
 - ✅ **Use comandos customizados**: Evita duplicação e torna os testes mais legíveis.
 - 🧱 **Centralize rotas**: Facilita manutenção e evita erros de digitação.
 - ⏱️ **Evite `cy.wait()` fixo**: Prefira `cy.should` para esperar elementos dinamicamente.
-- 🧪 **Separe por contexto**: Organize testes em arquivos como `form`, `alert`, `dynamic` etc.
+- 🧪 **Separe por contexto**: Organize testes em arquivos como `form`, `alert`, `dynamic`, etc.
 
 ---
 
@@ -176,20 +185,20 @@ Sinta-se à vontade para abrir *Issues* com sugestões ou *Pull Requests* com me
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a [MIT License](LICENSE.md).
+Este projeto está licenciado sob a [MIT License](LICENSE).
 
 ---
 
 ## 📫 Contato
 
 **Eduarda Ferreira**  
-📧 eduarda.cferreira10@gmail.com
+📧 eduarda.cferreira10@gmail.com  
 🔗 [LinkedIn](https://www.linkedin.com/in/eduarda-ferreira/)  
 🐙 [GitHub](https://github.com/eduardacf)
 
 ---
 
-🧪 Feito com carinho para garantir a qualidade de software.  
-💬 Feedbacks e melhorias são sempre bem-vindos!
+🧪 Feito com foco em qualidade, clareza e boas práticas.  
+💬 Sugestões e feedbacks são sempre bem-vindos!
 
-🚀 _Eduarda Ferreira_
+🚀 Eduarda Ferreira
