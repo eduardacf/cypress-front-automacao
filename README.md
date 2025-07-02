@@ -132,6 +132,11 @@ cy.validarConteudoDoFrame('#frame1', 'This is a sample page');
 cy.adicionarRegistroTabela(usuario); // Insere novo registro
 cy.validarRegistroNaTabela(usuario);   // Valida conteúdo inserido
 ```
+### 🔍 Acessibilidade (WCAG)
+
+```ts
+cy.verificarAcessibilidadeComLogs();
+```
 
 ---
 

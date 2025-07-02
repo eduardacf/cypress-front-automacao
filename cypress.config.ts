@@ -1,5 +1,7 @@
 import { defineConfig } from 'cypress';
 import mochawesome from 'cypress-mochawesome-reporter/plugin';
+import * as dotenv from 'dotenv';
+import * as path from 'path';
 
 export default defineConfig({
     e2e: {
@@ -16,9 +18,10 @@ export default defineConfig({
                     return null;
                 }
             });
+            const ambiente = process.env.CYPRESS_ENV || 'dev';
+            dotenv.config({path: path.resolve(__dirname, `.env.${ambiente}`)});
+            config.baseUrl = config.env.BASE_URL || process.env.BASE_URL || 'https://demoqa.com';
             mochawesome(on);
-            config.baseUrl =
-                config.env.BASE_URL || process.env.BASE_URL || config.baseUrl;
             return config;
         },
         reporter: 'cypress-mochawesome-reporter',
