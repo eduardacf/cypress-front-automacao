@@ -1,22 +1,26 @@
 # 🚀 Projeto de Testes Automatizados com Cypress + TypeScript
+### Testes E2E para a plataforma DemoQA, com estrutura modular e comandos customizados
 
-Este projeto tem como objetivo a criação de uma suíte de testes **end-to-end** automatizados para a aplicação demo [DemoQA](https://demoqa.com), utilizando **Cypress** e **TypeScript**.
+Este projeto automatiza testes end-to-end da aplicação [DemoQA](https://demoqa.com), utilizando **Cypress** com **TypeScript**.
 
-Além da automação tradicional, o projeto inclui o uso de **comandos customizados** para tornar os testes mais reutilizáveis, legíveis e de fácil manutenção.
+A automação cobre interações complexas de UI com foco em clareza, reutilização e boas práticas, incluindo:
+- Comandos Cypress personalizados
+- Fixtures organizadas
+- Estrutura de testes por contexto
 
 ---
 
-## 📚 Sumário
+## Sumário
+- [Descrição](#descrição)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Comandos Personalizados](#comandos-personalizados)
+- [Como Executar](#como-executar)
+- [Boas Práticas](#boas-práticas)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
+- [Contato](#contato)
 
-- [📖 Descrição](#-descrição)
-- [🛠️ Tecnologias Utilizadas](#️-tecnologias-utilizadas)
-- [📂 Estrutura do Projeto](#-estrutura-do-projeto)
-- [🧩 Comandos Personalizados](#-comandos-personalizados)
-- [🎯 Como Executar](#-como-executar)
-- [✅ Boas Práticas](#-boas-práticas)
-- [🤝 Contribuição](#-contribuição)
-- [📄 Licença](#-licença)
-- [📫 Contato](#-contato)
 
 ---
 
@@ -156,12 +160,10 @@ npm run format
 
 ## ✅ Boas Práticas
 
-- Utilize comandos customizados para evitar duplicação
-- Agrupe testes por contexto em `describe/context`
-- Mantenha rotas centralizadas em um único arquivo (`navegacao.ts`)
-- Use `cy.should` com polling para esperar elementos dinâmicos
-- Evite `cy.wait()` fixo quando possível
-- Prefira fixtures para dados de entrada
+- ✅ **Use comandos customizados**: Evita duplicação e torna os testes mais legíveis.
+- 🧱 **Centralize rotas**: Facilita manutenção e evita erros de digitação.
+- ⏱️ **Evite `cy.wait()` fixo**: Prefira `cy.should` para esperar elementos dinamicamente.
+- 🧪 **Separe por contexto**: Organize testes em arquivos como `form`, `alert`, `dynamic` etc.
 
 ---
 
@@ -187,4 +189,7 @@ Este projeto está licenciado sob a [MIT License](LICENSE.md).
 
 ---
 
-✨ Obrigado por contribuir com qualidade de software! 🚀
+🧪 Feito com carinho para garantir a qualidade de software.  
+💬 Feedbacks e melhorias são sempre bem-vindos!
+
+🚀 _Eduarda Ferreira_
