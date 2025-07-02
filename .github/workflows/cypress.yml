@@ -28,6 +28,12 @@ jobs:
       - name: "🧪 Executar testes com Cypress (modo headless)"
         run: npx cypress run
 
+      - name: "📁 Garantir diretórios de relatório"
+        if: always()
+        run: |
+          mkdir -p mochawesome-report
+          mkdir -p cypress/screenshots
+
       - name: "📸 Salvar screenshots (em caso de falha)"
         if: failure()
         uses: actions/upload-artifact@v4
