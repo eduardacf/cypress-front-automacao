@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: Cypress CI - Testes End-to-End Automatizados
 
 on:
   push:
@@ -7,29 +7,30 @@ on:
     branches: [ master ]
 
 jobs:
-  cypress-run:
+  run-cypress-tests:
+    name: Executar suíte de testes Cypress
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🧾 Checkout do código
+      - name: Checkout do repositório
         uses: actions/checkout@v3
 
-      - name: ⚙️ Setup Node.js
+      - name: Configurar ambiente Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: 📦 Instalar dependências
+      - name: Instalar dependências do projeto
         run: npm install
 
-      - name: 🧪 Rodar testes Cypress (modo headless)
+      - name: Executar testes Cypress no modo headless
         run: npx cypress run
 
-      - name: 💾 Salvar vídeos e screenshots (caso falhe)
+      - name: Armazenar artefatos de execução (screenshots e vídeos)
         if: failure()
         uses: actions/upload-artifact@v3
         with:
-          name: cypress-artifacts
+          name: evidencias-cypress
           path: |
             cypress/screenshots
             cypress/videos
