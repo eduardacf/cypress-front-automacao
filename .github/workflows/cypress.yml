@@ -33,6 +33,7 @@ jobs:
         run: |
           mkdir -p mochawesome-report
           mkdir -p cypress/screenshots
+          mkdir -p cypress/reports
 
       - name: "📸 Salvar screenshots (em caso de falha)"
         if: failure()
