@@ -4,6 +4,7 @@ export default defineConfig({
     e2e: {
         baseUrl: 'https://demoqa.com',
         defaultCommandTimeout: 10000,
+        pageLoadTimeout: 120000,
         viewportWidth: 1280,
         viewportHeight: 720,
         screenshotOnRunFailure: true,
