@@ -9,5 +9,5 @@
     "skipLibCheck": true,
     "types": ["cypress", "node"]
   },
-  "include": ["**/*.ts", "cypress.d.ts"]
+  "include": ["**/*.ts", "support/index.d.ts"]
 }

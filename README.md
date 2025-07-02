@@ -148,13 +148,16 @@ cd seu-repositorio
 # 3. Instale as dependências
 npm install
 
-# 4. Abra a interface do Cypress
+# 4. (Opcional) Defina a BASE_URL para testar outra aplicação
+export BASE_URL=http://sua-aplicacao.com  # padrão: https://demoqa.com
+
+# 5. Abra a interface do Cypress
 npm run cy:open
 
-# 5. Execute os testes em modo headless
+# 6. Execute os testes em modo headless
 npm run cy:run
 
-# 6. Verifique o estilo de código e formate arquivos
+# 7. Verifique o estilo de código e formate arquivos
 npm run lint
 npm run format
 ```
