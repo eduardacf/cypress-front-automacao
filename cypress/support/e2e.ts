@@ -11,6 +11,6 @@ import 'cypress-axe';
 import './commands/acessibilidade';
 
 Cypress.on('uncaught:exception', () => {
-    // Ignora erros de scripts externos do site
-    return false;
+  // Ignora erros de scripts externos do site
+  return false;
 });

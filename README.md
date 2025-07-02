@@ -92,7 +92,7 @@ Todos os testes estão organizados em arquivos separados por contexto, com coman
 ├── cypress/tsconfig.json       # Configurações do TypeScript
 ├── .env.dev                    # Configuração base (DEV)
 ├── .env.staging                # Configuração STAGING
-├── .env.prod                   # Configuração PROD├── .github/
+├── .env.prod                   # Configuração PROD
 ├── .github/
 │   └── workflows/
 │       └── cypress.yml         # Pipeline de testes no GitHub Actions
