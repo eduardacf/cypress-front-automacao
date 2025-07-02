@@ -47,7 +47,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: relatorio-mochawesome
-          path: mochawesome-report
+          path: cypress/reports
 
       - name: "🔍 Debug: Listar arquivos gerados"
         if: always()
