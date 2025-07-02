@@ -11,15 +11,15 @@ A automação cobre interações complexas de UI com foco em clareza, reutiliza�
 ---
 
 ## Sumário
-- [Descrição](#descrição)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Comandos Personalizados](#comandos-personalizados)
-- [Como Executar](#como-executar)
-- [Boas Práticas](#boas-práticas)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
-- [Contato](#contato)
+- [Descrição](#-descrição)
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Comandos Personalizados](#-comandos-personalizados)
+- [Como Executar](#-como-executar-o-projeto)
+- [Boas Práticas](#-boas-práticas)
+- [Contribuição](#-contribuição)
+- [Licença](#-licença)
+- [Contato](#-contato)
 
 ---
 
@@ -67,20 +67,22 @@ Todos os testes estão organizados em arquivos separados por contexto, com coman
 │   │   └── foto.jpg
 │   └── support/
 │       ├── commands/           # Comandos customizados do Cypress
-│       │   ├── demoqa.ts
-│       │   ├── dynamic.ts
-│       │   ├── estrutura.ts
-│       │   ├── form.ts
-│       │   ├── interacoes.ts
-│       │   ├── modal.ts
-│       │   ├── navegacao.ts
-│       │   └── validacoes.ts
+│       │   ├── demoqa.ts       # Cadastro, alertas e modais
+│       │   ├── dynamic.ts      # Progresso e botão dinâmico
+│       │   ├── estrutura.ts    # Alertas simples e iframes
+│       │   ├── form.ts         # Ações do formulário principal
+│       │   ├── interacoes.ts   # Cliques, tooltips, radios e checkbox
+│       │   ├── modal.ts        # Validação do modal de envio
+│       │   ├── navegacao.ts    # Navegação padronizada com rotas
+│       │   └── validacoes.ts   # Campos obrigatórios e formatos inválidos
 │       ├── e2e.ts              # Importa todos os comandos
 │       └── index.d.ts          # Tipagens dos comandos customizados
-├── package.json
+├── package.json                # Configurações do projeto e scripts
 ├── package-lock.json
-├── tsconfig.json
-└── .eslintrc.json / .prettierrc
+├── cypress/tsconfig.json       # Configurações do TypeScript
+├── eslint.config.js            # Regras do ESLint
+├── .prettierrc                 # Regras do Prettier
+└── .gitignore
 ```
 
 ---
@@ -188,7 +190,6 @@ Sinta-se à vontade para abrir *Issues* com sugestões ou *Pull Requests* com me
 Este projeto está licenciado sob a [MIT License](LICENSE).
 
 ---
-
 ## 📫 Contato
 
 **Eduarda Ferreira**  
@@ -197,8 +198,5 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 🐙 [GitHub](https://github.com/eduardacf)
 
 ---
-
 🧪 Feito com foco em qualidade, clareza e boas práticas.  
 💬 Sugestões e feedbacks são sempre bem-vindos!
-
-🚀 Eduarda Ferreira
