@@ -28,14 +28,13 @@ jobs:
       - name: "🧪 Executar testes com Cypress (modo headless)"
         run: npx cypress run
 
-      - name: "📸 Salvar screenshots e vídeos (em caso de falha)"
+      - name: "📸 Salvar screenshots (em caso de falha)"
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: evidencias-cypress
           path: |
             cypress/screenshots
-            cypress/videos
 
       - name: "🗂️ Upload: Relatório mochawesome"
         if: always()
@@ -53,9 +52,8 @@ jobs:
           echo "📁 Relatório HTML (mochawesome):"
           ls -R mochawesome-report || echo "Nenhum relatório HTML encontrado"
 
-          echo "📁 Evidências (screenshots/videos):"
+          echo "📁 Evidências (screenshots):"
           ls -R cypress/screenshots || echo "Nenhuma screenshot gerada"
-          ls -R cypress/videos || echo "Nenhum vídeo gerado"
 
       - name: "🔗 Instrução: Onde encontrar o relatório final"
         if: always()

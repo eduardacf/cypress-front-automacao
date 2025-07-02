@@ -22,7 +22,7 @@ export default defineConfig({
         viewportWidth: 1280,
         viewportHeight: 720,
         screenshotOnRunFailure: true,
-        video: true,
+        video: false,
         setupNodeEvents(on, config) {
             on('task', {
                 log(message: string) {
