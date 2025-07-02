@@ -10,7 +10,7 @@ import 'cypress-mochawesome-reporter/register';
 import 'cypress-axe';
 import './commands/acessibilidade';
 
-Cypress.on('uncaught:exception', (err, runnable) => {
+Cypress.on('uncaught:exception', () => {
     // Ignora erros de scripts externos do site
     return false;
 });
