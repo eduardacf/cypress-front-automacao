@@ -8,7 +8,7 @@ Este projeto automatiza testes end-to-end da aplicação [DemoQA](https://demoqa
 
 > **Por que vale a pena conferir?**
 > - Código organizado em módulos claros e reutilizáveis
-> - Execução multienviroment com arquivos `.env`
+> - Execução multienvironment com arquivos `.env`
 > - Pipeline de CI pronto para GitHub Actions
 
 A automação cobre interações complexas de UI com foco em clareza, reutilização e boas práticas, incluindo:
@@ -57,9 +57,7 @@ Todos os testes estão organizados em arquivos separados por contexto, com coman
 ---
 
 ## 📂 Estrutura do Projeto
-
 ```plaintext
-├── cypress.config.ts           # Configuração principal do Cypress
 ├── cypress/
 │   ├── e2e/                    # Testes automatizados
 │   │   ├── componentes-ui.cy.ts
@@ -85,14 +83,18 @@ Todos os testes estão organizados em arquivos separados por contexto, com coman
 │       │   ├── navegacao.ts    # Navegação padronizada com rotas
 │       │   ├── acessibilidade.ts # Validações de WCAG com cypress-axe
 │       │   └── validacoes.ts   # Campos obrigatórios e formatos inválidos
+│       ├── utils/              # Rotas e utilidades compartilhadas
+│       │   └── rotas.ts        # Mapeamento das URLs
 │       ├── e2e.ts              # Importa todos os comandos
 │       └── index.d.ts          # Tipagens dos comandos customizados
 ├── package.json                # Configurações do projeto e scripts
 ├── package-lock.json
 ├── cypress/tsconfig.json       # Configurações do TypeScript
-├── .env.dev                    # Configuração base (DEV)
-├── .env.staging                # Configuração STAGING
-├── .env.prod                   # Configuração PROD
+├── config/
+│   └── env/                    # Variáveis de cada ambiente
+│       ├── dev.env             # Configuração base (DEV)
+│       ├── staging.env         # Configuração STAGING
+│       └── prod.env            # Configuração PROD
 ├── .github/
 │   └── workflows/
 │       └── cypress.yml         # Pipeline de testes no GitHub Actions
@@ -161,23 +163,24 @@ cy.verificarAcessibilidadeComLogs();
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/<usuario>/<repositorio>.git
 
 # 2. Acesse o projeto
-cd seu-repositorio
+cd <repositorio>
 
 # 3. Instale as dependências
 npm install
 
 # 4. (Opcional) Defina o ambiente e a BASE_URL
+#    Garanta que o arquivo `config/env/{ambiente}.env` exista
 export CYPRESS_ENV=staging          # dev é o padrão
 export BASE_URL=http://sua-app.com  # padrão: https://demoqa.com
 
 # 5. Abra a interface interativa
-npm run open:dev
+npm run open:dev               # para outros ambientes use: CYPRESS_ENV=staging npm run cy:open
 
 # 6. Rode a suíte de testes no modo headless
-npm run test:dev
+npm run test:dev            # ou npm run test:staging / test:prod
 
 # 7. Formate e verifique o estilo do código
 npm run format
@@ -188,8 +191,12 @@ npm run lint
 
 ## 📜 Scripts disponíveis
 
-- `npm run cy:open` – Abre a interface visual do Cypress
-- `npm run cy:run` – Executa os testes no modo headless
+- `npm run open:dev` – Abre a interface no ambiente de desenvolvimento
+- `npm run test:dev` – Executa a suíte no modo headless (DEV)
+- `npm run test:staging` – Executa os testes no ambiente STAGING
+- `npm run test:prod` – Executa os testes no ambiente PROD
+- `npm run cy:open` – Abre a interface usando o ambiente definido
+- `npm run cy:run` – Executa os testes usando o ambiente definido
 - `npm run lint` – Verifica padrões de código com ESLint
 - `npm run format` – Formata o código com Prettier
 
