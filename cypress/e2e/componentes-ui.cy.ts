@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Web Tables - Cadastro e validação de registros', () => {
     beforeEach(() => {
         cy.acessarPagina('webtables');

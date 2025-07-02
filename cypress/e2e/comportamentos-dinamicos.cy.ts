@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Progress Bar - Validação de progresso visual', () => {
     beforeEach(() => {
         cy.acessarPagina('progress');

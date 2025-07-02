@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Formulário DemoQA - Fluxo completo de preenchimento e validação de dados', () => {
 
     // Carrega os dados de teste antes da suíte

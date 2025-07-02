@@ -1,4 +1,3 @@
-/// <reference types="cypress" />
 
 // ⚠️ ATENÇÃO:
 // Este teste de acessibilidade utiliza o comando personalizado `verificarAcessibilidadeComLogs`

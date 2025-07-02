@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Alerts - Validação de alertas simples do sistema', () => {
     beforeEach(() => {
         cy.acessarPagina('alerts');

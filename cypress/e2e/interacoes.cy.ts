@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Interações com componentes visuais - Botões, Tooltips e Seleções', () => {
 
     context('Botões', () => {

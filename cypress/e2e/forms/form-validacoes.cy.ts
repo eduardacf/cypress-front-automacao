@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Formulário DemoQA - Validações de campos obrigatórios e formatos inválidos', () => {
 
     beforeEach(() => {
