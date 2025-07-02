@@ -3,6 +3,7 @@
   "sobrenome": "Ferreira",
   "email": "eduarda@example.com",
   "telefone": "9999999999",
+  "data": "26 January,1998",
   "dataNascimento": {
     "dia": "26",
     "mes": "January",

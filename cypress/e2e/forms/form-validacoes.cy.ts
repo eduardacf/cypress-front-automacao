@@ -1,11 +1,9 @@
 /// <reference types="cypress" />
 
-/// <reference types="cypress" />
-
 describe('Formulário DemoQA - Validações de campos obrigatórios e formatos inválidos', () => {
 
     beforeEach(() => {
-        cy.visitarFormularioDemoQA();
+        cy.acessarPagina('form');
     });
 
     it('Deve exibir erro ao tentar enviar o formulário sem preencher o nome', () => {

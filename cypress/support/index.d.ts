@@ -9,8 +9,6 @@ declare namespace Cypress {
             telefone: string;
         }): Chainable<Subject>;
 
-        visitarFormularioDemoQA(): void
-
         validarModal(usuario: any): void
 
         selecionarLocalidade(estado: string, cidade: string): void
@@ -37,8 +35,6 @@ declare namespace Cypress {
 
         validarLarguraCampo(seletor: string, minimo: number): void
 
-        preencherTabelaUsuario(usuario: any): void
-
         confirmarAlerta(botaoSeletor: any, resultadoEsperado: any): void
 
         adicionarRegistroTabela(usuario: any): void
@@ -64,5 +60,7 @@ declare namespace Cypress {
         selecionarRadio(idInput: any, textoEsperado: any): void
 
         validarCliques(): void
+
+        acessarPagina(pagina: any): void
     }
 }

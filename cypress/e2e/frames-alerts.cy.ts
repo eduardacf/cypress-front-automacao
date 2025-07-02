@@ -2,7 +2,7 @@
 
 describe('Alerts - Validação de alertas simples do sistema', () => {
     beforeEach(() => {
-        cy.visit('/alerts');
+        cy.acessarPagina('alerts');
     });
 
     it('Deve exibir alerta simples ao clicar no botão', () => {
@@ -12,7 +12,7 @@ describe('Alerts - Validação de alertas simples do sistema', () => {
 
 describe('Frames - Validação de conteúdo dentro de iframes', () => {
     beforeEach(() => {
-        cy.visit('/frames');
+        cy.acessarPagina('frames');
     });
 
     it('Deve validar conteúdo de texto dentro do frame principal', () => {

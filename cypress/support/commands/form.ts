@@ -1,7 +1,3 @@
-Cypress.Commands.add('visitarFormularioDemoQA', () => {
-    cy.visit('/automation-practice-form');
-});
-
 Cypress.Commands.add('preencherFormularioBasico', (usuario) => {
     cy.get('#firstName').type(usuario.nome);
     cy.get('#lastName').type(usuario.sobrenome);

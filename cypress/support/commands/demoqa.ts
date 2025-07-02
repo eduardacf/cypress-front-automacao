@@ -4,17 +4,6 @@ Cypress.Commands.add('confirmarAlerta', (botaoSeletor, resultadoEsperado) => {
     cy.get('#confirmResult').should('contain', resultadoEsperado);
 });
 
-Cypress.Commands.add('preencherTabelaUsuario', (usuario) => {
-    cy.get('#addNewRecordButton').click();
-    cy.get('#firstName').type(usuario.nome);
-    cy.get('#lastName').type(usuario.sobrenome);
-    cy.get('#userEmail').type(usuario.email);
-    cy.get('#age').type(usuario.idade);
-    cy.get('#salary').type(usuario.salario);
-    cy.get('#department').type(usuario.departamento);
-    cy.get('#submit').click();
-});
-
 Cypress.Commands.add('adicionarRegistroTabela', (usuario) => {
     cy.get('#addNewRecordButton').click();
     cy.get('#firstName').type(usuario.nome);

@@ -8,7 +8,7 @@ describe('Formulário DemoQA - Fluxo completo de preenchimento e validação de 
     });
 
     beforeEach(() => {
-        cy.visitarFormularioDemoQA();
+        cy.acessarPagina('form');
     });
 
     it('Deve preencher o formulário completo, envia os dados e valida o conteúdo do modal de confirmação', function () {

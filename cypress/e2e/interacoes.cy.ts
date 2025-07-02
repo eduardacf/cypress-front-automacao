@@ -4,7 +4,7 @@ describe('Interações com componentes visuais - Botões, Tooltips e Seleções'
 
     context('Botões', () => {
         beforeEach(() => {
-            cy.visit('/buttons');
+            cy.acessarPagina('buttons');
         });
 
         it('Deve validar clique duplo e clique com botão direito', () => {
@@ -14,7 +14,7 @@ describe('Interações com componentes visuais - Botões, Tooltips e Seleções'
 
     context('Tooltips', () => {
         beforeEach(() => {
-            cy.visit('/tool-tips');
+            cy.acessarPagina('tooltips');
         });
 
         it('Deve exibir tooltip ao passar o mouse sobre o botão', () => {
@@ -24,7 +24,7 @@ describe('Interações com componentes visuais - Botões, Tooltips e Seleções'
 
     context('Checkbox', () => {
         beforeEach(() => {
-            cy.visit('/checkbox');
+            cy.acessarPagina('checkbox');
         });
 
         it('Deve expandir árvore e selecionar item Downloads', () => {
@@ -34,12 +34,11 @@ describe('Interações com componentes visuais - Botões, Tooltips e Seleções'
 
     context('Radio Button', () => {
         beforeEach(() => {
-            cy.visit('/radio-button');
+            cy.acessarPagina('radiobutton');
         });
 
         it('Deve selecionar a opção "Yes"', () => {
             cy.selecionarRadio('yesRadio', 'Yes');
         });
     });
-
 });

@@ -2,7 +2,7 @@
 
 describe('Web Tables - Cadastro e validação de registros', () => {
     beforeEach(() => {
-        cy.visit('/webtables');
+        cy.acessarPagina('webtables');
     });
 
     it('Deve adicionar e validar um novo registro na tabela', () => {
@@ -15,7 +15,7 @@ describe('Web Tables - Cadastro e validação de registros', () => {
 
 describe('Modal Dialogs - Interação com modal pequeno', () => {
     beforeEach(() => {
-        cy.visit('/modal-dialogs');
+        cy.acessarPagina('modais');
     });
 
     it('Deve abrir e validar o conteúdo do modal pequeno', () => {
@@ -25,7 +25,7 @@ describe('Modal Dialogs - Interação com modal pequeno', () => {
 
 describe('Alerts - Confirmação e validação de resposta', () => {
     beforeEach(() => {
-        cy.visit('/alerts');
+        cy.acessarPagina('alerts');
     });
 
     it('Deve aceitar o alerta de confirmação e validar o resultado', () => {
