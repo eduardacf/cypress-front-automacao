@@ -3,6 +3,3 @@
 cypress/videos/
 cypress/screenshots/
 coverage/
-.env
-/cypress-back-automacao.iml
-!/cypress-back-automacao.iml

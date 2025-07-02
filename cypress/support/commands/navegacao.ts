@@ -1,22 +1,8 @@
-export const rotas = {
-    webtables: '/webtables',
-    alerts: '/alerts',
-    modais: '/modal-dialogs',
-    frames: '/frames',
-    tooltips: '/tool-tips',
-    radiobutton: '/radio-button',
-    checkbox: '/checkbox',
-    dynamic: '/dynamic-properties',
-    progress: '/progress-bar',
-    buttons: '/buttons',
-    form: '/automation-practice-form'
-};
+import { rotas, type Pagina } from '../utils/rotas';
 
-Cypress.Commands.add('acessarPagina', (pagina) => {
-    // @ts-ignore
+// @ts-ignore - Página é tipada manualmente em index.d.ts para autocomplete do comando
+Cypress.Commands.add('acessarPagina', (pagina: Pagina) => {
     const rota = rotas[pagina];
-    if (!rota) {
-        throw new Error(`Página "${pagina}" não mapeada em rotas`);
-    }
     cy.visit(rota);
 });
+

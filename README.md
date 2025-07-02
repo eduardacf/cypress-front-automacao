@@ -1,7 +1,15 @@
 # 🚀 Projeto de Testes Automatizados com Cypress + TypeScript
-### Testes E2E para a plataforma DemoQA, com estrutura modular e comandos customizados
+### Testes E2E para a plataforma DemoQA com arquitetura organizada e comandos customizados
+
+![Cypress](https://img.shields.io/badge/Cypress-14.5.0-brightgreen?style=flat-square)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?style=flat-square)
 
 Este projeto automatiza testes end-to-end da aplicação [DemoQA](https://demoqa.com), utilizando **Cypress** com **TypeScript**.
+
+> **Por que vale a pena conferir?**
+> - Código organizado em módulos claros e reutilizáveis
+> - Execução multienviroment com arquivos `.env`
+> - Pipeline de CI pronto para GitHub Actions
 
 A automação cobre interações complexas de UI com foco em clareza, reutilização e boas práticas, incluindo:
 - Comandos Cypress personalizados
@@ -82,11 +90,13 @@ Todos os testes estão organizados em arquivos separados por contexto, com coman
 ├── package.json                # Configurações do projeto e scripts
 ├── package-lock.json
 ├── cypress/tsconfig.json       # Configurações do TypeScript
-├── cypress.env.json            # Variáveis de ambiente da suíte
+├── .env.dev                    # Configuração base (DEV)
+├── .env.staging                # Configuração STAGING
+├── .env.prod                   # Configuração PROD├── .github/
 ├── .github/
 │   └── workflows/
 │       └── cypress.yml         # Pipeline de testes no GitHub Actions
-├── eslint.config.js            # Regras do ESLint
+├── eslint.config.mjs           # Regras do ESLint
 ├── .prettierrc                 # Regras do Prettier
 └── .gitignore
 ```
@@ -159,18 +169,19 @@ cd seu-repositorio
 # 3. Instale as dependências
 npm install
 
-# 4. (Opcional) Defina a BASE_URL para testar outra aplicação
-export BASE_URL=http://sua-aplicacao.com  # padrão: https://demoqa.com
+# 4. (Opcional) Defina o ambiente e a BASE_URL
+export CYPRESS_ENV=staging          # dev é o padrão
+export BASE_URL=http://sua-app.com  # padrão: https://demoqa.com
 
-# 5. Abra a interface do Cypress
-npm run cy:open
+# 5. Abra a interface interativa
+npm run open:dev
 
-# 6. Execute os testes em modo headless
-npm run cy:run
+# 6. Rode a suíte de testes no modo headless
+npm run test:dev
 
-# 7. Verifique o estilo de código e formate arquivos
-npm run lint
+# 7. Formate e verifique o estilo do código
 npm run format
+npm run lint
 ```
 
 ---

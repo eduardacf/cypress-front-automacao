@@ -1,16 +1,24 @@
-import { defineConfig } from 'cypress';
+import {defineConfig} from 'cypress';
 import mochawesome from 'cypress-mochawesome-reporter/plugin';
 import * as dotenv from 'dotenv';
-import * as path from 'path';
+import {resolve} from 'path';
 
+dotenv.config({path: resolve(__dirname, `.env.${process.env.CYPRESS_ENV || 'dev'}`)});
+const baseUrl = process.env.BASE_URL;
+if (!baseUrl) {
+    console.warn(
+        '⚠️ Variável BASE_URL não definida. Usando "https://demoqa.com" como valor padrão.'
+    );
+}
 export default defineConfig({
     e2e: {
+        baseUrl: baseUrl || 'https://demoqa.com',
         defaultCommandTimeout: 10000,
         pageLoadTimeout: 120000,
         viewportWidth: 1280,
         viewportHeight: 720,
         screenshotOnRunFailure: true,
-        video: false,
+        video: true,
         setupNodeEvents(on, config) {
             on('task', {
                 log(message: string) {
@@ -18,9 +26,6 @@ export default defineConfig({
                     return null;
                 }
             });
-            const ambiente = process.env.CYPRESS_ENV || 'dev';
-            dotenv.config({path: path.resolve(__dirname, `.env.${ambiente}`)});
-            config.baseUrl = config.env.BASE_URL || process.env.BASE_URL || 'https://demoqa.com';
             mochawesome(on);
             return config;
         },
