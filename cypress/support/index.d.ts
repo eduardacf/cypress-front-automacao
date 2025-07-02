@@ -31,7 +31,7 @@ declare namespace Cypress {
         departamento: string;
     }
 
-    interface Chainable<Subject = any> {
+    interface Chainable<Subject = unknown> {
         preencherFormularioBasico(usuario: Pick<Usuario, 'nome' | 'sobrenome' | 'email' | 'telefone'>): Chainable<Subject>;
 
         validarModal(usuario: Usuario): void;
@@ -65,8 +65,6 @@ declare namespace Cypress {
         adicionarRegistroTabela(usuario: UsuarioTabela): void;
 
         validarModalPequeno(): void;
-
-        confirmarAlertaComValidacao(botaoSeletor: string, resultadoEsperado: string): void;
 
         validarRegistroNaTabela(usuario: UsuarioTabela): void;
 
