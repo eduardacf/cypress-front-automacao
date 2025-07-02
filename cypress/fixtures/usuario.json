@@ -1,0 +1,23 @@
+{
+  "nome": "Eduarda",
+  "sobrenome": "Ferreira",
+  "email": "eduarda@example.com",
+  "telefone": "9999999999",
+  "dataNascimento": {
+    "dia": "26",
+    "mes": "January",
+    "ano": "1998"
+  },
+  "disciplinas": [
+    "Maths",
+    "Arts"
+  ],
+  "hobbies": [
+    "Sports",
+    "Reading"
+  ],
+  "estado": "Uttar Pradesh",
+  "cidade": "Merrut",
+  "endereco": "Rua Exemplo, 123 - Porto Alegre",
+  "foto": "foto.jpg"
+}
