@@ -162,10 +162,10 @@ Este projeto está licenciado sob a [MIT License](LICENSE.md).
 
 ## 📫 Contato
 
-**Seu Nome Aqui**  
-📧 seu.email@exemplo.com  
-🔗 [LinkedIn](https://linkedin.com/in/seuperfil)  
-🐙 [GitHub](https://github.com/seuusuario)
+**Eduarda Ferreira**  
+📧 eduarda.cferreira10@gmail.com
+🔗 [LinkedIn](https://www.linkedin.com/in/eduarda-ferreira/)  
+🐙 [GitHub](https://github.com/eduardacf)
 
 ---
 
