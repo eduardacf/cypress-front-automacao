@@ -11,6 +11,12 @@ export default defineConfig({
         screenshotOnRunFailure: true,
         video: false,
         setupNodeEvents(on, config) {
+            on('task', {
+                log(message: string) {
+                    console.log(message);
+                    return null;
+                }
+            });
             mochawesome(on);
             config.baseUrl =
                 config.env.BASE_URL || process.env.BASE_URL || config.baseUrl;
