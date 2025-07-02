@@ -21,12 +21,6 @@ Cypress.Commands.add('validarModalPequeno', () => {
     cy.get('#closeSmallModal').click();
 });
 
-Cypress.Commands.add('confirmarAlertaComValidacao', (botaoSeletor, resultadoEsperado) => {
-    cy.get(botaoSeletor).click();
-    cy.on('window:confirm', () => true);
-    cy.get('#confirmResult').should('contain', resultadoEsperado);
-});
-
 Cypress.Commands.add('validarRegistroNaTabela', (usuario) => {
     cy.get('.rt-tbody')
         .should('contain', usuario.nome)

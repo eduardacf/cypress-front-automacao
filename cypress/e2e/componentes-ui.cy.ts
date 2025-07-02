@@ -29,6 +29,7 @@ describe('Alerts - Confirmação e validação de resposta', () => {
     });
 
     it('Deve aceitar o alerta de confirmação e validar o resultado', () => {
-        cy.confirmarAlertaComValidacao('#confirmButton', 'You selected Ok');
+        cy.confirmarAlerta('#confirmButton', 'You selected Ok');
     });
 });
+

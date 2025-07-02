@@ -42,4 +42,3 @@ Cypress.Commands.add('validarEnvioComSucesso', () => {
     cy.get('#example-modal-sizes-title-lg')
         .should('contain', 'Thanks for submitting the form');
 });
-

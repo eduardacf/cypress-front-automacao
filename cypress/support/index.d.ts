@@ -41,8 +41,6 @@ declare namespace Cypress {
 
         validarModalPequeno(): void
 
-        confirmarAlertaComValidacao(botaoSeletor: any, resultadoEsperado: any): void
-
         validarRegistroNaTabela(usuario: any): void
 
         validarBotaoHabilitadoAposDelay(): void
