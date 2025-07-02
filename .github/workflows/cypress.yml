@@ -2,9 +2,9 @@ name: 🚀 Cypress CI - Testes End-to-End Automatizados
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main, master ]
   pull_request:
-    branches: [ master ]
+    branches: [ main, master ]
 
 jobs:
   run-cypress-tests:
@@ -15,21 +15,18 @@ jobs:
       - name: 📥 Checkout do repositório
         uses: actions/checkout@v3
 
-      - name: ⚙️ Configurar ambiente Node.js
+      - name: ⚙️ Configurar Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: 🛠️ Ajustar política de dependência peer (cypress-axe compatível)
-        run: npm config set legacy-peer-deps true
-
-      - name: 📦 Instalar dependências do projeto
-        run: npm install
+      - name: 📦 Instalar dependências com compatibilidade (cypress-axe)
+        run: npm ci --legacy-peer-deps
 
       - name: 🧪 Executar testes Cypress no modo headless
         run: npx cypress run
 
-      - name: 📸 Armazenar artefatos (screenshots e vídeos)
+      - name: 📸 Armazenar screenshots e vídeos (se falhar)
         if: failure()
         uses: actions/upload-artifact@v4
         with:
@@ -38,8 +35,23 @@ jobs:
             cypress/screenshots
             cypress/videos
 
-      - name: 📊 Publicar relatório mochawesome
+      - name: 📊 Publicar relatório mochawesome (JSON + HTML)
         uses: actions/upload-artifact@v4
         with:
           name: relatorio-mochawesome
-          path: cypress/reports
+          path: |
+            cypress/reports
+            mochawesome-report
+
+      - name: 🔍 Listar arquivos gerados para debug
+        if: always()
+        run: |
+          echo "📁 Relatórios Cypress:"
+          ls -R cypress/reports || echo "Nenhum relatório em cypress/reports"
+
+          echo "📁 Relatórios HTML (mochawesome):"
+          ls -R mochawesome-report || echo "Nenhum relatório em mochawesome-report"
+
+          echo "📁 Evidências (screenshots/videos):"
+          ls -R cypress/screenshots || echo "Nenhuma screenshot gerada"
+          ls -R cypress/videos || echo "Nenhum vídeo gerado"

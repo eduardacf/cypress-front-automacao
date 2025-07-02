@@ -3,7 +3,6 @@ import mochawesome from 'cypress-mochawesome-reporter/plugin';
 
 export default defineConfig({
     e2e: {
-        baseUrl: 'https://demoqa.com',
         defaultCommandTimeout: 10000,
         pageLoadTimeout: 120000,
         viewportWidth: 1280,
@@ -22,7 +21,13 @@ export default defineConfig({
                 config.env.BASE_URL || process.env.BASE_URL || config.baseUrl;
             return config;
         },
-        reporter: 'cypress-mochawesome-reporter',
+        reporter: 'mochawesome',
+        reporterOptions: {
+            reportDir: 'mochawesome-report',
+            overwrite: false,
+            html: true,
+            json: true
+        },
         experimentalRunAllSpecs: true,
     },
 });
