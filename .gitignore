@@ -1,2 +1,7 @@
 /.idea/
 /node_modules/
+cypress/videos/
+cypress/screenshots/
+coverage/
+.env
+/cypress-back-automacao.iml
