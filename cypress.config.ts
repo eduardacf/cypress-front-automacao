@@ -21,12 +21,15 @@ export default defineConfig({
                 config.env.BASE_URL || process.env.BASE_URL || config.baseUrl;
             return config;
         },
-        reporter: 'mochawesome',
+        reporter: 'cypress-mochawesome-reporter',
         reporterOptions: {
-            reportDir: 'mochawesome-report',
+            reportDir: 'cypress/reports',
             overwrite: false,
             html: true,
-            json: true
+            json: true,
+            charts: true,
+            embeddedScreenshots: true,
+            saveAllAttempts: false
         },
         experimentalRunAllSpecs: true,
     },

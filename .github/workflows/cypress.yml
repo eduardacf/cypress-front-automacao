@@ -8,25 +8,25 @@ on:
 
 jobs:
   run-cypress-tests:
-    name: Executar suíte de testes Cypress
+    name: "🧪 Executar suíte de testes E2E com Cypress"
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout do repositório
+      - name: "📥 Clonar repositório"
         uses: actions/checkout@v3
 
-      - name: ⚙️ Configurar Node.js
+      - name: "⚙️ Preparar ambiente Node.js"
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: 📦 Instalar dependências com compatibilidade (cypress-axe)
+      - name: "📦 Instalar dependências com compatibilidade (cypress-axe)"
         run: npm ci --legacy-peer-deps
 
-      - name: 🧪 Executar testes Cypress no modo headless
+      - name: "🧪 Executar testes com Cypress (modo headless)"
         run: npx cypress run
 
-      - name: 📸 Armazenar screenshots e vídeos (se falhar)
+      - name: "📸 Salvar screenshots e vídeos (em caso de falha)"
         if: failure()
         uses: actions/upload-artifact@v4
         with:
@@ -35,23 +35,31 @@ jobs:
             cypress/screenshots
             cypress/videos
 
-      - name: 📊 Publicar relatório mochawesome (JSON + HTML)
+      - name: "🗂️ Upload: Relatório mochawesome"
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: relatorio-mochawesome
-          path: |
-            cypress/reports
-            mochawesome-report
+          path: mochawesome-report
 
-      - name: 🔍 Listar arquivos gerados para debug
+      - name: "🔍 Debug: Listar arquivos gerados"
         if: always()
         run: |
-          echo "📁 Relatórios Cypress:"
-          ls -R cypress/reports || echo "Nenhum relatório em cypress/reports"
+          echo "📁 Relatórios JSON Cypress:"
+          ls -R cypress/reports || echo "Nenhum relatório encontrado em cypress/reports"
 
-          echo "📁 Relatórios HTML (mochawesome):"
-          ls -R mochawesome-report || echo "Nenhum relatório em mochawesome-report"
+          echo "📁 Relatório HTML (mochawesome):"
+          ls -R mochawesome-report || echo "Nenhum relatório HTML encontrado"
 
           echo "📁 Evidências (screenshots/videos):"
           ls -R cypress/screenshots || echo "Nenhuma screenshot gerada"
           ls -R cypress/videos || echo "Nenhum vídeo gerado"
+
+      - name: "🔗 Instrução: Onde encontrar o relatório final"
+        if: always()
+        run: |
+          echo ""
+          echo "✅ Testes finalizados!"
+          echo "📄 O relatório mochawesome HTML está disponível em:"
+          echo "     mochawesome-report/index.html"
+          echo ""
