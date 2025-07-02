@@ -88,7 +88,8 @@ Todos os testes estão organizados em arquivos separados por contexto, com coman
 ---
 
 ## 🧩 Comandos Personalizados
-
+O projeto utiliza diversos comandos Cypress customizados para reutilização e clareza.  
+Abaixo, seguem **alguns exemplos organizados por categoria**:
 ### 🔄 Formulários e validações
 
 ```ts
@@ -173,9 +174,10 @@ npm run format
 
 - ✅ **Use comandos customizados**: Evita duplicação e torna os testes mais legíveis.
 - 🧱 **Centralize rotas**: Facilita manutenção e evita erros de digitação.
-- ⏱️ **Evite `cy.wait()` fixo**: Prefira `cy.should` para esperar elementos dinamicamente.
 - 🧪 **Separe por contexto**: Organize testes em arquivos como `form`, `alert`, `dynamic`, etc.
-
+- 🧪 Valide o conteúdo, não só a presença dos elementos
+- 🔁 Use fixtures para dados reutilizáveis
+- 🔁 Utilize scripts npm para abrir, rodar e formatar o projeto
 ---
 
 ## 🤝 Contribuição
@@ -196,7 +198,3 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 📧 eduarda.cferreira10@gmail.com  
 🔗 [LinkedIn](https://www.linkedin.com/in/eduarda-ferreira/)  
 🐙 [GitHub](https://github.com/eduardacf)
-
----
-🧪 Feito com foco em qualidade, clareza e boas práticas.  
-💬 Sugestões e feedbacks são sempre bem-vindos!
