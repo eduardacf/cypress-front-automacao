@@ -7,6 +7,7 @@ import './commands/estrutura';
 import './commands/interacoes';
 import './commands/navegacao';
 import 'cypress-mochawesome-reporter/register';
+import 'cypress-axe';
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     // Ignora erros de scripts externos do site

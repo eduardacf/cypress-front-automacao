@@ -1,24 +1,9 @@
-#!/bin/sh
-if [ -z "$husky_skip_init" ]; then
-  debug () {
-    [ -n "$HUSKY_DEBUG" ] && echo "husky: $*"
-  }
+echo "husky - DEPRECATED
 
-  readonly hook_name="$(basename "$0")"
-  debug "starting $hook_name..."
-  if [ -z "$husky_skip_init" ]; then
-    if [ -f ~/.huskyrc ]; then
-      debug "~/.huskyrc is deprecated, use ~/.huskyrc.sh"
-      . ~/.huskyrc
-    fi
-    if [ -f ~/.huskyrc.sh ]; then
-      debug "loading ~/.huskyrc.sh"
-      . ~/.huskyrc.sh
-    fi
-  fi
-  export readonly husky_skip_init=1
-  sh -e "$0" "$@"
-  exitCode="$?"
-  debug "done $hook_name, exit code $exitCode"
-  exit "$exitCode"
-fi
+Please remove the following two lines from $0:
+
+#!/usr/bin/env sh
+. \"\$(dirname -- \"\$0\")/_/husky.sh\"
+
+They WILL FAIL in v10.0.0
+"
