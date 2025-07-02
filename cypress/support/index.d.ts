@@ -1,64 +1,91 @@
 /// <reference types="cypress" />
 
 declare namespace Cypress {
+    interface DataNascimento {
+        dia: string;
+        mes: string;
+        ano: string;
+    }
+
+    interface Usuario {
+        nome: string;
+        sobrenome: string;
+        email: string;
+        telefone: string;
+        data: string;
+        dataNascimento: DataNascimento;
+        disciplinas: string[];
+        hobbies: string[];
+        estado: string;
+        cidade: string;
+        endereco: string;
+        foto: string;
+    }
+
+    interface UsuarioTabela {
+        nome: string;
+        sobrenome: string;
+        email: string;
+        idade: string;
+        salario: string;
+        departamento: string;
+    }
+
     interface Chainable<Subject = any> {
-        preencherFormularioBasico(usuario: {
-            nome: string;
-            sobrenome: string;
-            email: string;
-            telefone: string;
-        }): Chainable<Subject>;
+        preencherFormularioBasico(usuario: Pick<Usuario, 'nome' | 'sobrenome' | 'email' | 'telefone'>): Chainable<Subject>;
 
-        validarModal(usuario: any): void
+        validarModal(usuario: Usuario): void;
 
-        selecionarLocalidade(estado: string, cidade: string): void
+        selecionarLocalidade(estado: string, cidade: string): void;
 
-        preencherEndereco(endereco: string): void
+        preencherEndereco(endereco: string): void;
 
-        selecionarHobbies(hobbies: string[]): void
+        selecionarHobbies(hobbies: string[]): void;
 
-        selecionarDisciplinas(disciplinas: string[]): void
+        selecionarDisciplinas(disciplinas: string[]): void;
 
-        preencherDataNascimento(data: any): void
+        preencherDataNascimento(data: DataNascimento): void;
 
-        submeterFormulario(): void
+        submeterFormulario(): void;
 
-        validarEnvioComSucesso(): void
+        validarEnvioComSucesso(): void;
 
-        fecharModal(): void
+        fecharModal(): void;
 
-        uploadImagemDoUsuario(foto: string): void
+        uploadImagemDoUsuario(foto: string): void;
 
-        validarCampoObrigatorio(seletor: string): void
+        validarCampoObrigatorio(seletor: string): void;
 
-        validarFormatoInvalido(seletor: string, valorInvalido: string): void
+        validarFormatoInvalido(seletor: string, valorInvalido: string): void;
 
-        validarLarguraCampo(seletor: string, minimo: number): void
+        validarLarguraCampo(seletor: string, minimo: number): void;
 
-        confirmarAlerta(botaoSeletor: any, resultadoEsperado: any): void
+        confirmarAlerta(botaoSeletor: string, resultadoEsperado: string): void;
 
-        adicionarRegistroTabela(usuario: any): void
+        adicionarRegistroTabela(usuario: UsuarioTabela): void;
 
-        validarModalPequeno(): void
+        validarModalPequeno(): void;
 
-        validarRegistroNaTabela(usuario: any): void
+        confirmarAlertaComValidacao(botaoSeletor: string, resultadoEsperado: string): void;
 
-        validarBotaoHabilitadoAposDelay(): void
+        validarRegistroNaTabela(usuario: UsuarioTabela): void;
 
-        validarProgressoCompleto(): void
+        validarBotaoHabilitadoAposDelay(): void;
 
-        validarConteudoDoFrame(seletorFrame: any, textoEsperado: any): void
+        validarProgressoCompleto(): void;
 
-        validarAlertaSimples(mensagemEsperada: any): void
+        validarConteudoDoFrame(seletorFrame: string, textoEsperado: string): void;
 
-        validarTooltip(seletor: any, textoEsperado: any): void
+        validarAlertaSimples(mensagemEsperada: string): void;
 
-        selecionarCheckbox(labelTexto: any): void
+        validarTooltip(seletor: string, textoEsperado: string): void;
 
-        selecionarRadio(idInput: any, textoEsperado: any): void
+        selecionarCheckbox(labelTexto: string): void;
 
-        validarCliques(): void
+        selecionarRadio(idInput: string, textoEsperado: string): void;
 
-        acessarPagina(pagina: any): void
+        validarCliques(): void;
+
+        acessarPagina(pagina: string): void;
     }
 }

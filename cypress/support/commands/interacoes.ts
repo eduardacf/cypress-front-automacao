@@ -8,7 +8,7 @@ Cypress.Commands.add('validarCliques', () => {
 
 Cypress.Commands.add('validarTooltip', (seletor, textoEsperado) => {
     cy.get(seletor).trigger('mouseover');
-    cy.get('.tooltip-inner').should('contain', textoEsperado);
+    cy.contains('.tooltip-inner', textoEsperado, { timeout: 5000 }).should('be.visible');
 });
 
 Cypress.Commands.add('selecionarCheckbox', (labelTexto) => {
