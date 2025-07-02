@@ -49,23 +49,3 @@ jobs:
           name: relatorio-mochawesome
           path: cypress/reports
 
-      - name: "🔍 Debug: Listar arquivos gerados"
-        if: always()
-        run: |
-          echo "📁 Relatórios JSON Cypress:"
-          ls -R cypress/reports || echo "Nenhum relatório encontrado em cypress/reports"
-
-          echo "📁 Relatório HTML (mochawesome):"
-          ls -R mochawesome-report || echo "Nenhum relatório HTML encontrado"
-
-          echo "📁 Evidências (screenshots):"
-          ls -R cypress/screenshots || echo "Nenhuma screenshot gerada"
-
-      - name: "🔗 Instrução: Onde encontrar o relatório final"
-        if: always()
-        run: |
-          echo ""
-          echo "✅ Testes finalizados!"
-          echo "📄 O relatório mochawesome HTML está disponível em:"
-          echo "     mochawesome-report/index.html"
-          echo ""
