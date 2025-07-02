@@ -1,4 +1,4 @@
-name: Cypress CI - Testes End-to-End Automatizados
+name: 🚀 Cypress CI - Testes End-to-End Automatizados
 
 on:
   push:
@@ -12,21 +12,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do repositório
+      - name: 📥 Checkout do repositório
         uses: actions/checkout@v3
 
-      - name: Configurar ambiente Node.js
+      - name: ⚙️ Configurar ambiente Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: Instalar dependências do projeto
+      - name: 🛠️ Ajustar política de dependência peer (cypress-axe compatível)
+        run: npm config set legacy-peer-deps true
+
+      - name: 📦 Instalar dependências do projeto
         run: npm install
 
-      - name: Executar testes Cypress no modo headless
+      - name: 🧪 Executar testes Cypress no modo headless
         run: npx cypress run
 
-      - name: Armazenar artefatos de execução (screenshots e vídeos)
+      - name: 📸 Armazenar artefatos (screenshots e vídeos)
         if: failure()
         uses: actions/upload-artifact@v4
         with:
@@ -35,7 +38,7 @@ jobs:
             cypress/screenshots
             cypress/videos
 
-      - name: Publicar relatório mochawesome
+      - name: 📊 Publicar relatório mochawesome
         uses: actions/upload-artifact@v4
         with:
           name: relatorio-mochawesome
