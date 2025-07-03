@@ -51,6 +51,7 @@ Todos os testes estão organizados em arquivos separados por contexto, com coman
 
 - [Cypress 14.5.0](https://www.cypress.io/)
 - [TypeScript 5.8.3](https://www.typescriptlang.org/)
+- [Mochawesome](https://github.com/adamgruber/mochawesome)
 - Node.js (v18+ recomendado)
 - Editor sugerido: VS Code ou IntelliJ IDEA Ultimate
 
