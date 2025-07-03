@@ -1,5 +1,4 @@
 # 🚀 Projeto de Testes Automatizados de UI com Cypress + TypeScript
-### Testes E2E para a plataforma DemoQA com arquitetura organizada e comandos customizados
 
 ![Cypress](https://img.shields.io/badge/Cypress-14.5.0-brightgreen?style=flat-square)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?style=flat-square)
@@ -172,10 +171,11 @@ cd <repositorio>
 # 3. Instale as dependências
 npm install
 
-# 4. (Opcional) Defina o ambiente e a BASE_URL
-#    Garanta que o arquivo `config/env/{ambiente}.env` exista
-export CYPRESS_ENV=staging          # dev é o padrão
-export BASE_URL=http://sua-app.com  # padrão: https://demoqa.com
+# 4. (Opcional) Configure o ambiente
+# Por padrão, o ambiente "dev" será carregado.
+# Para alterar, defina a variável CYPRESS_ENV e, se necessário, BASE_URL:
+export CYPRESS_ENV=staging
+export BASE_URL=https://demoqa.com
 
 # 5. Abra a interface interativa
 npm run open:dev               # para outros ambientes use: CYPRESS_ENV=staging npm run cy:open
