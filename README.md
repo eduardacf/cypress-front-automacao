@@ -1,4 +1,4 @@
-# 🚀 Projeto de Testes Automatizados com Cypress + TypeScript
+# 🚀 Projeto de Testes Automatizados de UI com Cypress + TypeScript
 ### Testes E2E para a plataforma DemoQA com arquitetura organizada e comandos customizados
 
 ![Cypress](https://img.shields.io/badge/Cypress-14.5.0-brightgreen?style=flat-square)
@@ -59,7 +59,7 @@ Todos os testes estão organizados em arquivos separados por contexto, com coman
 ## 📂 Estrutura do Projeto
 ```plaintext
 ├── cypress/
-│   ├── e2e/                    # Testes automatizados
+│   ├── e2e/                    # Testes de UI
 │   │   ├── componentes-ui.cy.ts
 │   │   ├── comportamentos-dinamicos.cy.ts
 │   │   ├── frames-alerts.cy.ts
